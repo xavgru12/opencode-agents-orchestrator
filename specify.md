@@ -19,6 +19,12 @@ Your prompt contains the raw task request plus a `slug` and an output path.
 If the slug or path is missing, default the slug to a short kebab-case name and
 write to `docs/<slug>.spec.md`.
 
+**Re-runs:** if you are launched again with feedback (e.g. the architect or
+tester found the spec ambiguous or untestable), read the existing spec at the
+given path, amend it in place to address every point of feedback, and re-validate
+it against the quality bar. Do not start over from scratch; incorporate and
+preserve what is still correct.
+
 ## Process
 
 1. **Restate the goal** in your own words.
@@ -47,7 +53,7 @@ Write the specification to the path you were given, using this template:
 - slug: <slug>
 - status: ready
 - author: specify
-- assumptions: <any decisions made on the requester's behalf>
+- assumptions: <omit — assumptions and decisions are embedded inline where they apply, not in a separate section>
 
 ## Goal
 <One or two sentences on what this task must achieve and why.>
@@ -79,11 +85,21 @@ Write the specification to the path you were given, using this template:
 
 ## Quality bar
 
-- Every requirement is numbered and independently testable.
-- No implementation detail leaks in (no "use Redis", no "add class X"); leave
-  **how** to the architect.
-- The spec is self-contained: someone who never saw the request could implement
-  and test from it alone.
+- Every requirement is numbered and independently testable (Given/When/Then).
+- **No implementation detail leaks in.** A spec states *what* and *acceptance
+  criteria* only. It must NOT name classes, functions, enum values, constants,
+  symbol identifiers, file paths, or timer/wiring seams — no "add class X", no
+  "use timer Y", no "HDLC_ERROR_FOO", no "TIMEOUT_MS = 200". The **how** and
+  every code identifier belong to the architect's design, not the spec.
+- Assumptions and decisions are embedded inline in the requirement text where
+  they apply — do NOT add a separate "Assumptions" / "Decisions" chapter. Where
+  a decision has a rationale, state the "why" briefly inline in the same
+  sentence. Implementation-level decisions (interfaces, seams, exact values)
+  still go to the design.
+- When a requirement spans layers (e.g. transport vs application), keep the
+  layers clearly separated and do not mix their error codes or responsibilities.
+- The spec is self-contained at the behavior level: someone who never saw the
+  request could implement and test from it alone (the design supplies the code).
 - Assumptions are explicit, never silent.
 
 ## Completion

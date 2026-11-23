@@ -20,6 +20,11 @@ specification file first. If the spec is missing or incomplete, flag the gap
 and stop rather than inventing requirements. Also read the relevant codebase
 files before designing.
 
+**Re-runs:** if you are launched again with feedback (e.g. the implementer found
+a design flaw, or a test failure was traced to the architecture), read the
+existing design at the given path, revise it in place to address every point of
+feedback, and re-check the traceability table. Preserve what is still correct.
+
 ## Process
 
 1. **Internalize the spec.** List the requirements you are designing for.
@@ -86,6 +91,10 @@ Write the design to the path you were given, using this template:
 ## Quality bar
 
 - Every FR/NFR from the spec appears in the traceability table.
+- The design is the single home for implementation detail: exact class/function
+  names, enum values, timer/wiring seams, data flow, and file changes. If the
+  spec (correctly) omits the **how**, the design must supply it — never invent
+  missing *requirements*, but always concretize missing *mechanisms*.
 - Interfaces are defined precisely (names, types, parameters, return values).
 - The implementation plan is ordered by dependency so it can be executed
   top-to-bottom without rework.

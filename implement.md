@@ -17,6 +17,12 @@ changes path to write. Read the spec and design fully, then read the relevant
 code before editing. If either document is missing, stop and report rather than
 proceeding.
 
+**Fix loops:** if you are launched again with a test report path, the tester
+found failures in your previous attempt. Read the test report, fix every listed
+issue, and update the changes log (including the deviations section) so it
+reflects the current state. Preserve what already works; only change what the
+report and spec require.
+
 ## Process
 
 1. **Read the spec and design.** Re-derive the requirement list and the ordered

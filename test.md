@@ -19,6 +19,11 @@ Your prompt contains a `slug` and the paths to read (spec, design, changes) and
 the report path to write. Read the spec (especially acceptance criteria), the
 design, and the changes log, then inspect the code and run the system.
 
+**Re-runs:** if you are launched again after fixes, do not assume anything still
+passes. Re-run the full suite from scratch and re-evaluate every acceptance
+criterion, then overwrite the report with the fresh results. If the same issue
+persists unchanged, say so explicitly rather than softening the verdict.
+
 ## Process
 
 1. **Derive the test plan from the spec.** Turn each acceptance criterion and
