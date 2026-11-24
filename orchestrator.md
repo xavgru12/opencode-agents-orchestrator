@@ -92,3 +92,5 @@ that need a human decision.
   on or go back.
 - **Bias toward the best end result**, not toward "finished once." A PASS that
   required three implement→test loops is better than a FAIL delivered quickly.
+- **No decision-evolution in artifacts.** Every artifact must read as final and
+  self-contained, with no hints of earlier reasoning, revisions, or corrections.

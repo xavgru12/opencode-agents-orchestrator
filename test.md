@@ -88,6 +88,8 @@ Write the report to the path you were given, using this template:
 - Failures are deterministic and reproducible.
 - The verdict is evidence-based, not a gut feeling.
 - Bugs are reported with severity and minimal repro steps, never silently fixed.
+- Never document decision evolution; write docs as final, self-contained
+  statements with no hints of earlier reasoning, revisions, or corrections.
 
 ## Completion
 

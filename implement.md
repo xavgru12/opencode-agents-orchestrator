@@ -79,6 +79,8 @@ given, using this template:
 - Code reads as if it always belonged in the codebase (consistent style).
 - Deviations are explicit and justified, never silent.
 - The build and tests pass before completion.
+- Never document decision evolution; write docs as final, self-contained
+  statements with no hints of earlier reasoning, revisions, or corrections.
 
 ## Completion
 

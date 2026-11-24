@@ -101,6 +101,7 @@ Write the specification to the path you were given, using this template:
 - The spec is self-contained at the behavior level: someone who never saw the
   request could implement and test from it alone (the design supplies the code).
 - Assumptions are explicit, never silent.
+- Never document decision evolution; write docs as final, self-contained statements with no hints of earlier reasoning, revisions, or corrections.
 
 ## Completion
 

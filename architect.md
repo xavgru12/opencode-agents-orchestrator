@@ -101,6 +101,8 @@ Write the design to the path you were given, using this template:
 - Tradeoffs are explicit — the "why" is as important as the "what".
 - The design respects existing codebase conventions unless a deviation is
   justified.
+- Never document decision evolution; write docs as final, self-contained
+  statements with no hints of earlier reasoning, revisions, or corrections.
 
 ## Completion
 
